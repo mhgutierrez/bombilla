@@ -1,6 +1,8 @@
 <?php
 
 Class Bombilla{
+	
+	
 	function on(){
 	return '<a href="index.php?off=1"><img style="background:rgba(252, 245, 239,0.25); border-radius:100px; margin:50px 0 0 50px; padding:80px;border:1px solid #313D47" src="lightbulb_on.png"></a></div>';
 }
@@ -14,15 +16,32 @@ Class Bombilla{
 //controlador
 $bombilla1 = new Bombilla();
 
+$bombilla2 = new Bombilla();
 
-
-
+for ($i=0;$i<5;$i++){
+$arrayBombillas[$i] = new Bombilla();
 if (!isset($_GET['off'])){
+	echo $arrayBombillas[$i]->on();	
+	}
+	else{
+		echo $arrayBombillas[$i]->off();
+	}
+}
+
+echo '<pre>';
+print_r ($arrayBombillas);
+echo '</pre>';
+
+/*if (!isset($_GET['off'])){
 	echo $bombilla1->on();	
+	echo $bombilla2->on();
 	}
 	else{
 		echo $bombilla1->off();
+		echo $bombilla2->off();
 	}
+	*/
+
 	
 	
 
